@@ -7,16 +7,32 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        body {
+            background-color: rgb(237, 89, 66);
+        }
+    </style>
     <header>
-        <h1>Dupe List</h1>
+        <main>
+            <h1>Duped Ya!</h1>
+            <h3>Because why pay full price for makeup?</h3>
+            <ul>
+                <% for(let i = 0; i < dupes.length; i++){ %>
+                <li>
+                    <a href="/dupes/<%= dupes[i]._id %>"><%= dupes[i].name %></a>
+                </li>
+                <% } %>
+            </ul>
+        </main>
+
         <nav>
             <ul>
                 <li>
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/dupes/new">New Dupe? Add Affordable Products here!</a>
-                </li>
+                    <a href="/dupes/new">New Dupe? Add it here!</a>
+                </li>                
             </ul>
         </nav>
     </header>
