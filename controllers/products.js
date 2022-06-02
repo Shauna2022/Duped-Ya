@@ -2,12 +2,12 @@
 //                      REQUIRE DEPENDENCIES
 ////////////////////////////////////////////////////////////
 const express = require('express')
-const { route } = require('express/lib/application')
 const router = express.Router()
 const Product = require('../models/product')
 ////////////////////////////////////////////////////////////
 //                      ROUTES
 ////////////////////////////////////////////////////////////
+router.use(express.urlencoded({ extended: false }));
 ////////////////////////INDEX ////////////////////////
 router.get('/', (req, res) => {
     Product.find({}, (error, foundProducts) => {

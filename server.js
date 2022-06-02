@@ -32,11 +32,8 @@ app.use('/products', productsController);
 ////////////////////////////////////////////////////////////
 ////////////////////////INDEX ////////////////////////
 app.get('/', (req, res) => {
-    Product.find({}, (error, foundProducts) => {
-        res.render('products/index.ejs', {
-            products: foundProducts
-        })
-    })
+        res.render('index.ejs', {
+  })
 })
 
 ////////////////////////////////////////////////////////////

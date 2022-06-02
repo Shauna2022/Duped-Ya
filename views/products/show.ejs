@@ -22,16 +22,15 @@
     </header>
     <main>
         <section>
-            <h2>Dupe list!</h2>
+            <h2>Expensive Brand list!</h2>
             <ul>
                 <li>Name: <%= Product.name %></li>
+                <li>Name: <%= Product.brand %></li>
+                <li>Name: <%= Product.price %></li>
+                <li>Name: <%= Product.color %></li>
             </ul>
         </section>
-        <section>
-            <form action="/products/<%= Product._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE" />
-            </form>
-        </section>
+        
     </main>
     <section>
         <a href="/products/<%= Product._id %>/edit">Price Change? Click Here!</a>
