@@ -22,7 +22,11 @@ router.get('/new', (req,res)=> {
 })
 
 //////////////////////// DELETE ////////////////////////
-
+router.delete('/:id', (req, res) => {
+    Product.findByIdAndRemove(req.params.id, () => {
+        res.redirect('/products');
+    });
+});
 
 //////////////////////// UPDATE ////////////////////////
 

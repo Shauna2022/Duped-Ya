@@ -6,6 +6,7 @@ const app = express();
 const productsController = require('./controllers/products.js')
 require('dotenv').config()
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 ////////////////////////////////////////////////////////////
 //                      SET UP DATEBASE
 //////////////////////////////////////////////////////////// 
@@ -23,7 +24,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 ////////////////////////////////////////////////////////////
 //                      MIDDLEWARE
 ////////////////////////////////////////////////////////////
-
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use('/products', productsController);
 ////////////////////////////////////////////////////////////
