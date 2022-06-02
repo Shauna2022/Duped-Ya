@@ -9,10 +9,13 @@ const Product = require('../models/product')
 //                      ROUTES
 ////////////////////////////////////////////////////////////
 ////////////////////////INDEX ////////////////////////
-router.get('/', (req, res)=> {
-    res.render('products/index.ejs')
+router.get('/', (req, res) => {
+    Product.find({}, (err, foundProducts) => {
+        res.render('products/index.ejs', {
+            products: foundProducts
+        })
+    })
 })
-
 //////////////////////// NEW ////////////////////////
 router.get('/new', (req,res)=> {
     res.render('products/new.ejs')
@@ -27,9 +30,9 @@ router.get('/new', (req,res)=> {
 //////////////////////// CREATE ////////////////////////
 router.post('/', (req, res) => {
     Product.create(req.body, (err, createdProduct) => {
-        res.redirect('/products');
-    });
-});
+        res.redirect('/products')
+    })
+})
 //////////////////////// EDIT ////////////////////////
 
 

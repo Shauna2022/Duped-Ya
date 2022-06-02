@@ -8,6 +8,16 @@
 </head>
 <body>
     <header>
+        <main>
+            <h2>List of Authors</h2>
+            <ul>
+                <% for(let i = 0; i < products.length; i++){ %>
+                <li>
+                    <a href="/products/<%= products[i]._id %>"><%= products[i].name %></a>
+                </li>
+                <% } %>
+            </ul>
+        </main>
 
         <nav>
             <ul>
@@ -17,6 +27,7 @@
                 <li>
                     <a href="/products/new">New Dupe? CLick Here!</a>
                 </li>
+                
             </ul>
         </nav>
     </header>
