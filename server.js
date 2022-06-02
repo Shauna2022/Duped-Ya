@@ -7,7 +7,8 @@ const productsController = require('./controllers/products.js');
 require('dotenv').config()
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const dupesController = require('./controllers/dupes.js');
+const dupesController = require('./controllers/dupes.js')
+const PORT = process.env.PORT || 3000;
 ////////////////////////////////////////////////////////////
 //                      SET UP DATEBASE
 //////////////////////////////////////////////////////////// 
