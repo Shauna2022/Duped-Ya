@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1><%= Dupe.name %></h1>
+        <h1><%= dupe.name %></h1>
         <nav>
             <ul>
                 <li>
@@ -24,17 +24,17 @@
         <section>
             <h2> Brand list!</h2>
             <ul>
-                <li>Name: <%= Dupe.name %></li>
-                <li>Name: <%= Dupe.brand %></li>
-                <li>Name: <%= Dupe.price %></li>
-                <li>Name: <%= Dupe.color %></li>
-                <li>Name: <%= Dupe.color %></li>
+                <li>Name: <%= dupe.name %></li>
+                <li>Name: <%= dupe.brand %></li>
+                <li>Name: <%= dupe.price %></li>
+                <li>Name: <%= dupe.color %></li>
+                <li>Name: <%= dupe.color %></li>
             </ul>
         </section>
         
     </main>
     <section>
-        <a href="/dupes/<%= Dupe._id %>/edit">Price Change? Click Here!</a>
+        <a href="/dupes/<%= dupe._id %>/edit">Price Change? Click Here!</a>
     </section>
 </body>
 </html>

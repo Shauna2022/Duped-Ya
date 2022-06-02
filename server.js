@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const dupesController = require('./controllers/dupes.js')
 const PORT = process.env.PORT || 3000;
+const Dupe = require('./models/dupe')
 ////////////////////////////////////////////////////////////
 //                      SET UP DATEBASE
 //////////////////////////////////////////////////////////// 

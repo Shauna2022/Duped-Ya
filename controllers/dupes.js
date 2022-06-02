@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////
 const express = require('express')
 const router = express.Router()
-const Dupe = require('../models/dupe.js');
+const Dupe = require('../models/dupe')
 ////////////////////////////////////////////////////////////
 //                      ROUTES
 ////////////////////////////////////////////////////////////
@@ -12,18 +12,25 @@ router.use(express.urlencoded({ extended: false }));
 router.get('/', (req, res) => {
      Dupe.find({}, (error, foundDupes) => {
         res.render('dupes/index.ejs', {
-            dupes: foundDupes
+            dupes: foundDupes,
         })
     })
 })
+
 //////////////////////// NEW ////////////////////////
 router.get('/new', (req,res)=> {
     res.render('dupes/new.ejs')
 })
 
+router.post('/', (req, res) => {
+    Dupe.create(req.body, (error, createdDupes) => {
+        console.log(req.body, "this is dupes")
+        res.redirect('/dupes')
+    })
+})
 //////////////////////// DELETE ////////////////////////
 router.delete('/:id', (req, res) => {
-    Dupes.findByIdAndRemove(req.params.id, () => {
+    Dupe.findByIdAndRemove(req.params.id, () => {
         res.redirect('/dupes')
     })
 })
@@ -36,25 +43,21 @@ router.put('/:id', (req, res) => {
 })
 
 //////////////////////// CREATE ////////////////////////
-router.post('/', (req, res) => {
-    Dupe.create(req.body, (error, createdDupe) => {
-        res.redirect('/dupes')
-    })
-})
+
 //////////////////////// EDIT ////////////////////////
 router.get('/:id/edit', (req, res) => {
     Dupe.findById(req.params.id, (err, foundDupes) => {
         res.render('dupes/edit.ejs', {
-            dupe: foundDupes
+            dupe: foundDupes,
         })
     })
 })
 
 //////////////////////// SHOW ////////////////////////////
 router.get('/:id', (req, res) => {
-    Dupe.findById(req.params.id, (error, found) => {
+    Dupe.findById(req.params.id, (error, foundDupes) => {
         res.render('dupes/show.ejs', {
-            dupe: foundDupes
+            dupe: foundDupes,
         })
     })
 })

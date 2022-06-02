@@ -12,7 +12,7 @@ router.use(express.urlencoded({ extended: false }));
 router.get('/', (req, res) => {
     Product.find({}, (error, foundProducts) => {
         res.render('products/index.ejs', {
-            products: foundProducts
+            products: foundProducts,
         })
     })
 })
@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
 router.get('/:id/edit', (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
         res.render('products/edit.ejs', {
-            product: foundProduct
+            product: foundProduct,
         })
     })
 })
@@ -54,7 +54,7 @@ router.get('/:id/edit', (req, res) => {
 router.get('/:id', (req, res) => {
     Product.findById(req.params.id, (error, foundProduct) => {
         res.render('products/show.ejs', {
-            Product: foundProduct
+            Product: foundProduct,
         })
     })
 })

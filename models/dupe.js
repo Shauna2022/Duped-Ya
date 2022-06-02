@@ -7,7 +7,7 @@ const dupeSchema = new Schema({
     brand:{type: String, required: true},
     price:{type: String, required:true},
     color:{type: String, required: true},
-    dupeFor:{type: String, required: true}
+    dupe:{type: String, required: true}
 });
 
 const Dupe = mongoose.model('Dupe', dupeSchema);
