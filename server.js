@@ -31,8 +31,12 @@ app.use('/products', productsController);
 //                      ROUTES
 ////////////////////////////////////////////////////////////
 ////////////////////////INDEX ////////////////////////
-app.get('/', (req, res)=> {
-    res.send('index.ejs')
+app.get('/', (req, res) => {
+    Product.find({}, (error, foundProducts) => {
+        res.render('products/index.ejs', {
+            products: foundProducts
+        })
+    })
 })
 
 ////////////////////////////////////////////////////////////

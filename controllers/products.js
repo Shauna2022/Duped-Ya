@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////
 //                      REQUIRE DEPENDENCIES
 ////////////////////////////////////////////////////////////
-const express = require('express');
-const { route } = require('express/lib/application');
-const router = express.Router();
+const express = require('express')
+const { route } = require('express/lib/application')
+const router = express.Router()
 const Product = require('../models/product')
 ////////////////////////////////////////////////////////////
 //                      ROUTES
@@ -24,12 +24,16 @@ router.get('/new', (req,res)=> {
 //////////////////////// DELETE ////////////////////////
 router.delete('/:id', (req, res) => {
     Product.findByIdAndRemove(req.params.id, () => {
-        res.redirect('/products');
-    });
-});
+        res.redirect('/products')
+    })
+})
 
 //////////////////////// UPDATE ////////////////////////
-
+router.put('/:id', (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, () => {
+        res.redirect('/products')
+    })
+})
 
 //////////////////////// CREATE ////////////////////////
 router.post('/', (req, res) => {
@@ -38,7 +42,13 @@ router.post('/', (req, res) => {
     })
 })
 //////////////////////// EDIT ////////////////////////
-
+router.get('/:id/edit', (req, res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        res.render('products/edit.ejs', {
+            product: foundProduct
+        })
+    })
+})
 
 //////////////////////// SHOW ////////////////////////////
 router.get('/:id', (req, res) => {
