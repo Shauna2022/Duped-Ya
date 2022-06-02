@@ -4,6 +4,7 @@
 const express = require('express');
 const { route } = require('express/lib/application');
 const router = express.Router();
+const Product = require('../models/product')
 ////////////////////////////////////////////////////////////
 //                      ROUTES
 ////////////////////////////////////////////////////////////
@@ -24,7 +25,11 @@ router.get('/new', (req,res)=> {
 
 
 //////////////////////// CREATE ////////////////////////
-
+router.post('/', (req, res) => {
+    Product.create(req.body, (err, createdProduct) => {
+        res.redirect('/products');
+    });
+});
 //////////////////////// EDIT ////////////////////////
 
 
