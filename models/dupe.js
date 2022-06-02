@@ -10,6 +10,6 @@ const dupeSchema = new Schema({
     dupeFor:{type: String, required: true}
 });
 
-const Dupe = mongoose.model('Product', dupeSchema);
+const Dupe = mongoose.model('Dupe', dupeSchema);
 
 module.exports = Dupe

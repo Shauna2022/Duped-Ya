@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Change</title>
+</head>
+<body>
+    <header>
+        <h1><%= dupe.name %>'s Price Changed</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/dupes">Dupe List</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>:</h2>
+        <form action="/dupes/<%= dupe._id %>?_method=PUT" method="POST">
+            <input type="number" name="price" value="<%= dupe.price %>" /><br />
+            <input type="submit" value="Update Price" />
+        </form>
+        <section>
+            <form action="/dupes/<%= dupe._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" />
+            </form>
+        </section>
+    </main>
+</body>
+</html>
