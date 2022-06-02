@@ -10,7 +10,7 @@ const Product = require('../models/product')
 ////////////////////////////////////////////////////////////
 ////////////////////////INDEX ////////////////////////
 router.get('/', (req, res) => {
-    Product.find({}, (err, foundProducts) => {
+    Product.find({}, (error, foundProducts) => {
         res.render('products/index.ejs', {
             products: foundProducts
         })
@@ -29,7 +29,7 @@ router.get('/new', (req,res)=> {
 
 //////////////////////// CREATE ////////////////////////
 router.post('/', (req, res) => {
-    Product.create(req.body, (err, createdProduct) => {
+    Product.create(req.body, (error, createdProduct) => {
         res.redirect('/products')
     })
 })
@@ -37,7 +37,13 @@ router.post('/', (req, res) => {
 
 
 //////////////////////// SHOW ////////////////////////////
-
+router.get('/:id', (req, res) => {
+    Product.findById(req.params.id, (error, foundProduct) => {
+        res.render('products/show.ejs', {
+            Product: foundProduct
+        })
+    })
+})
 
 //////////////////////// EXPORTS////////////////////////////
 module.exports = router
