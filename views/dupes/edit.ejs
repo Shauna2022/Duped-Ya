@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price Change</title>
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
     <header>
@@ -21,7 +22,6 @@
         </nav>
     </header>
     <main>
-        <h2>:</h2>
         <form action="/dupes/<%= dupe._id %>?_method=PUT" method="POST">
             <input type="number" name="price" value="<%= dupe.price %>" /><br />
             <input type="submit" value="Update Price" />

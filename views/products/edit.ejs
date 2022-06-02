@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style.css">
     <title>Price Change</title>
 </head>
 <body>
@@ -15,13 +16,12 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/products">Dupe List</a>
+                    <a href="/products">Expensive List</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Stuff</h2>
         <form action="/products/<%= product._id %>?_method=PUT" method="POST">
             <input type="number" name="price" value="<%= product.price %>" /><br />
             <input type="submit" value="Update Price" />

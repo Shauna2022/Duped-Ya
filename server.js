@@ -29,6 +29,7 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 ////////////////////////////////////////////////////////////
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
+app.use('/public', express.static('public'));
 app.use('/products', productsController);
 app.use('/dupes', dupesController);
 ////////////////////////////////////////////////////////////
