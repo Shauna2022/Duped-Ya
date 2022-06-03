@@ -22,10 +22,10 @@ I want to add user authentication, seperating the products by parts of the face,
 
 ##### Finished Website:
     
-![finished website part 1](image.png)
+![finished website part 1](https://imgur.com/a/3j1fE2X)
    
-![finished website part 2](image.png)
+![finished website part 2](https://imgur.com/a/x5MMf58)
 
-![finished website part 3](image.png)
+![finished website part 3](https://imgur.com/a/P5MjIfx)
 
-![finished website part 4](image.png)
+![finished website part 4](https://imgur.com/a/T6scv2B)
